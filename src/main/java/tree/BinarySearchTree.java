@@ -1,5 +1,6 @@
 package tree;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.TreeMap;
@@ -88,24 +89,27 @@ public class BinarySearchTree<E extends Comparable<E>> {
 
     /**
      * 利用队列实现树的层序遍历
+     *
      * @param root
      */
-    public void levelOrder(Node root){
+    public void levelOrder(Node root) {
         Queue<Node> q = new LinkedList<>();
         q.add(root);
-        while (q.isEmpty()){
+        while (q.isEmpty()) {
             Node cur = q.remove();
-            if (cur.left != null){
+            if (cur.left != null) {
                 q.add(cur.left);
             }
-            if (cur.right != null){
+            if (cur.right != null) {
                 q.add(cur.right);
             }
         }
     }
 
     public static void main(String[] args) {
-
+        String a = "asdcsdasewaa";
+        String b = "csd";
+        System.out.println();
     }
 
 }
