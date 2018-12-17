@@ -56,6 +56,42 @@ public class Solution {
     }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        
+        ListNode head = new ListNode(0);
+        ListNode cur = head;
+        int mod = 0;
+        while (l1 != null && l2 != null){
+            cur.next = new ListNode((l1.val + l2.val) % 10 + mod);
+            mod = (l1.val + l2.val) / 10;
+            l1 = l1.next;
+            l2 = l2.next;
+            cur = cur.next;
+        }
+        if (l1 != null){
+            while (l1 != null){
+                cur.next = new ListNode((l1.val) % 10 + mod);
+                mod = (l1.val ) / 10;
+                l1 = l1.next;
+                cur = cur.next;
+            }
+        }
+        if (l2 != null){
+            while (l1 != null){
+                cur.next = new ListNode((l2.val) % 10 + mod);
+                mod = (l2.val ) / 10;
+                l2 = l2.next;
+                cur = cur.next;
+            }
+        }
+        if(mod == 1){
+            cur.next = new ListNode(mod);
+        }
+        return head.next;
+    }
+
+    /**
+     * 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
+     */
+    public ListNode sortList(ListNode head) {
+        return null;
     }
 }
