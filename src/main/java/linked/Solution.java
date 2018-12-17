@@ -39,7 +39,23 @@ public class Solution {
         return head.next;
     }
 
+    /**
+     * cur只想头部节点，
+     */
     public ListNode reverseList(ListNode head) {
-        return null;
+        if (head == null)
+            return head;
+        ListNode next = null, cur = head, pre = null;  // 三个指针
+        while (cur != null) {
+            next = cur.next;
+            cur.next = pre;  // 先把头结点单独取出来，赋值给pre
+            pre = cur;   // 每次循环都把单独的头结点的next渎职复制pre
+            cur = next;
+        }
+        return pre;
+    }
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        
     }
 }
