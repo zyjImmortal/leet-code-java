@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * Solution
  */
-public class Solution {
+public class Strings {
 
     /**
      * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。  输入: "abcabcbb" 输出: 3 解释: 因为无重复字符的最长子串是
@@ -19,7 +19,7 @@ public class Solution {
 
         int start = 0;
         int length = 0;
-        HashMap data = new HashMap<>();
+        HashMap<Character, Integer> data = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             // 在新的字符出现在字典中并且，开始的位置要小于等于之前出现字符的位置
             // (如果开始的位置大于旧的位置还要更新起点-此时新位置到旧位置之间出现相同的字符就会导致长度计算偏大)
