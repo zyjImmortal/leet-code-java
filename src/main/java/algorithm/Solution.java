@@ -58,6 +58,32 @@ public class Solution {
         return 1;
     }
 
+    private int binaryResearch(int[] nums, int target) {
+        int left = 0, right = 0;
+        while (left < right) {
+
+        }
+        return -1;
+    }
+
+    /**
+     * 思路：先用二分查找出旋转点的位置，将序列分成两个正常的已排序的序列，然后再分别用二分查找找到target
+     */
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        int mid;
+        while (left < right) {
+            mid = (right + left) / 2;
+            if (nums[mid] > nums[right]) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        return 1;
+    }
+
     public static void main(String[] args) {
         int[] nums = new int[] { 100, 4, 200, 1, 3, 2 };
         Solution solution = new Solution();
