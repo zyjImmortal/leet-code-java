@@ -1,3 +1,4 @@
+
 package linked;
 /**
  * Definition for singly-linked list.

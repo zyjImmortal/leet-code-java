@@ -4,6 +4,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - Solution",
             "request": "launch",
+            "mainClass": "algorithm.Solution",
+            "projectName": "leet-code-java"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Solution",
+            "request": "launch",
             "mainClass": "arrays.Solution",
             "projectName": "leet-code-java"
         }
