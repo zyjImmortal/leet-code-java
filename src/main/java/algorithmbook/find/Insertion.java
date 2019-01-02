@@ -1,4 +1,4 @@
-package algorithmbook.sort;
+package algorithmbook.find;
 
 public class Insertion extends Sort {
 

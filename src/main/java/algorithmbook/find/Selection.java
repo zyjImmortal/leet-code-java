@@ -1,4 +1,4 @@
-package algorithmbook.sort;
+package algorithmbook.find;
 
 /**
  * 选择排序的特点：

@@ -1,4 +1,4 @@
-package algorithmbook.sort;
+package algorithmbook.find;
 
 public class Shell extends Sort {
     @Override
