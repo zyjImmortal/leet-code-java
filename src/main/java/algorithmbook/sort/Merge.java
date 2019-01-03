@@ -1,4 +1,4 @@
-package algorithmbook.find;
+package algorithmbook.sort;
 
 public class Merge extends Sort {
 
