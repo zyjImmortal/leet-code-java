@@ -36,8 +36,10 @@ public class Solution {
     }
 
     private int find(int p) {
-        if (p == map.get(p))
+        if (p == map.get(p)){
             return p;
+        }
+
         int parent = find(map.get(p));
         map.put(p, parent);
         return parent;

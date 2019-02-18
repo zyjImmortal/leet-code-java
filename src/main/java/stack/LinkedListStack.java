@@ -11,22 +11,25 @@ public class LinkedListStack<E> implements Stack<E> {
 
     }
 
+    @Override
     public int getSize() {
         return linkedList.getSize();
     }
 
+    @Override
     public boolean isEmpty() {
         return linkedList.isEmpty();
     }
 
+    @Override
     public void push(E e) {
         linkedList.addFirst(e);
     }
-
+    @Override
     public E pop() {
         return linkedList.removeLast();
     }
-
+    @Override
     public E peek() {
         return linkedList.get(0);
     }

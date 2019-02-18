@@ -53,7 +53,7 @@ public class Solution {
         return minValue;
     }
 
-    public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
+    public ListNode findFirstCommonNode(ListNode pHead1, ListNode pHead2) {
         ListNode p1 = pHead1;
         ListNode p2 = pHead2;
         while (p1 != p2) {
