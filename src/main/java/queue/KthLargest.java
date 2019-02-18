@@ -1,5 +1,10 @@
 package queue;
 
+import util.HelperMethod;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.PriorityQueue;
 
 /**
@@ -73,9 +78,40 @@ public class KthLargest {
         return queue.peek();
     }
 
+    /**
+     * 问题：
+     * 给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。
+     * 你只可以看到在滑动窗口 k 内的数字。滑动窗口每次只向右移动一位。返回滑动窗口最大值
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
+    public static int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums.length == 0) {
+            return new int[0];
+        }
+        int[] res = new int[nums.length - k + 1];
+        int index = 0;
+        Deque<Integer> deque = new ArrayDeque<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (!deque.isEmpty() && deque.peekFirst() <= i - k) {
+                deque.pollFirst();
+            }
+            while (!deque.isEmpty() && nums[deque.peekFirst()] < nums[i]) {
+                deque.pollLast();
+            }
+            deque.offerLast(i);
+            if (i >= k - 1) {
+                res[index++] = nums[deque.peekFirst()];
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
-        int[] nums = {2, 3, 6, 8, 5, 7, 1};
+        int[] nums = {1, 3, 1, 2, 0, 5};
 //        KthLargest kthLargest = new KthLargest();
-        System.out.println();
+        System.out.println(HelperMethod.integerArrayToString(KthLargest.maxSlidingWindow(nums, 3)));
     }
 }
