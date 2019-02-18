@@ -1,4 +1,4 @@
-package algorithmbook.find;
+package algorithmbook.sort;
 
 public abstract class Sort {
     public void sort(Comparable[] array) {
